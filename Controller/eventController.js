@@ -40,3 +40,14 @@ exports.deleteEventController=async (req,res)=>{
         res.status(500).json(error)
     }
 }
+
+exports.updateEventController=async(req,res)=>{
+    const {id}=req.params
+
+    try {
+        const updatedEvent=await events.findByIdAndUpdate(id,req.body, { new: true })
+        res.status(200).json(updatedEvent)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}

@@ -20,5 +20,7 @@ routes.get("/get-event",eventController.getEventController);
 
 routes.delete("/delete-event/:id",eventController.deleteEventController);
 
+routes.put("/update-event/:id",eventController.updateEventController);
+
 //export
 module.exports=routes
